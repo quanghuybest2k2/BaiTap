@@ -191,6 +191,7 @@ namespace EntityFrameworkCodeFirst
             this.Name = "frmCodeFirst";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý sinh viên EFCodeFirst";
+            this.Load += new System.EventHandler(this.frmCodeFirst_Load);
             this.gbDanhSachSV.ResumeLayout(false);
             this.gbDanhSachSV.PerformLayout();
             this.ResumeLayout(false);

@@ -63,12 +63,20 @@
       <DependentUpon>frmCodeFirst.cs</DependentUpon>
     </Compile>
     <Compile Include="Lop.cs" />
+    <Compile Include="Migrations\202206011144472_InitialCreation.cs" />
+    <Compile Include="Migrations\202206011144472_InitialCreation.designer.cs">
+      <DependentUpon>202206011144472_InitialCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLSVContext.cs" />
     <Compile Include="SinhVien.cs" />
     <EmbeddedResource Include="frmCodeFirst.resx">
       <DependentUpon>frmCodeFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206011144472_InitialCreation.resx">
+      <DependentUpon>202206011144472_InitialCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

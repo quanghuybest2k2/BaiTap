@@ -13,6 +13,10 @@ namespace EntityFrameworkCodeFirst
         {
 
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
         public virtual DbSet<Lop> lops { get; set; }
         public virtual DbSet<SinhVien> sinhviens { get; set; }
     }
