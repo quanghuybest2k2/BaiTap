@@ -34,7 +34,7 @@ namespace EntityFrameworkCodeFirst
             this.colMSSV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHoTenSV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colLop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textTimKiem = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.txtHoTenSV = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.cbbLop = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,7 @@ namespace EntityFrameworkCodeFirst
             // gbDanhSachSV
             // 
             this.gbDanhSachSV.Controls.Add(this.lvDanhSachSV);
-            this.gbDanhSachSV.Controls.Add(this.textTimKiem);
+            this.gbDanhSachSV.Controls.Add(this.txtTimKiem);
             this.gbDanhSachSV.Location = new System.Drawing.Point(12, 145);
             this.gbDanhSachSV.Name = "gbDanhSachSV";
             this.gbDanhSachSV.Size = new System.Drawing.Size(572, 290);
@@ -89,12 +89,12 @@ namespace EntityFrameworkCodeFirst
             this.colLop.Text = "Lớp";
             this.colLop.Width = 111;
             // 
-            // textTimKiem
+            // txtTimKiem
             // 
-            this.textTimKiem.Location = new System.Drawing.Point(385, 19);
-            this.textTimKiem.Name = "textTimKiem";
-            this.textTimKiem.Size = new System.Drawing.Size(181, 20);
-            this.textTimKiem.TabIndex = 0;
+            this.txtTimKiem.Location = new System.Drawing.Point(385, 19);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(181, 20);
+            this.txtTimKiem.TabIndex = 0;
             // 
             // txtHoTenSV
             // 
@@ -205,7 +205,7 @@ namespace EntityFrameworkCodeFirst
         private System.Windows.Forms.ColumnHeader colMSSV;
         private System.Windows.Forms.ColumnHeader colHoTenSV;
         private System.Windows.Forms.ColumnHeader colLop;
-        private System.Windows.Forms.TextBox textTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.TextBox txtHoTenSV;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.ComboBox cbbLop;

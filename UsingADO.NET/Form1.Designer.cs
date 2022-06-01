@@ -124,6 +124,7 @@ namespace UsingADO.NET
             this.lvDanhSachSV.TabIndex = 1;
             this.lvDanhSachSV.UseCompatibleStateImageBehavior = false;
             this.lvDanhSachSV.View = System.Windows.Forms.View.Details;
+            this.lvDanhSachSV.SelectedIndexChanged += new System.EventHandler(this.lvDanhSachSV_SelectedIndexChanged);
             // 
             // colMSSV
             // 

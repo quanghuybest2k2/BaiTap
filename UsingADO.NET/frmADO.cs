@@ -38,7 +38,20 @@ namespace UsingADO.NET
         private void SetSearchText()
         {
             txtTimKiem.Text = textSearch;
-            //txtTimKiem.GotFocus += XoaText;
+            txtTimKiem.GotFocus += GotFocus;
+            txtTimKiem.LostFocus += LostFocus;
+        }
+        private void GotFocus(object sender, EventArgs e)
+        {
+            txtTimKiem.Text = "";
+        }
+        private void LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text))
+            {
+                txtTimKiem.Text = textSearch;
+                btnReload.PerformClick();
+            }
         }
         private void LoadListView(List<SinhVien> list)
         {
@@ -149,6 +162,16 @@ namespace UsingADO.NET
         {
             var list = DanhSachSV.Where(sv => sv.Hoten.IndexOf(txtTimKiem.Text, StringComparison.InvariantCultureIgnoreCase) == 0).ToList();
             LoadListView(list);
+        }
+
+        private void lvDanhSachSV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvDanhSachSV.SelectedItems.Count>0)
+            {
+                var id = int.Parse(lvDanhSachSV.SelectedItems[0].Text);
+                var sinhvien = DanhSachSV.FirstOrDefault(sv => sv.IDSinhVien == id);
+                ThietLapThongTin(sinhvien);
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace UsingADO.NET
         }
         public Lop(DataRow row)
         {
-            IDlop = Convert.ToInt32(row["Id"]);
+            IDlop = Convert.ToInt32(row["ID"]);
             TenLop = row["TenLop"].ToString();
         }
     }

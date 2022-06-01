@@ -20,9 +20,9 @@ namespace UsingADO.NET
         }
         public SinhVien(DataRow row)
         {
-            IDSinhVien = Convert.ToInt32(row["IdSinhVien"]);
+            IDSinhVien = Convert.ToInt32(row["ID"]);
             Hoten = row["Hoten"].ToString();
-            IDlop = Convert.ToInt32(row["IDlop"]);
+            IDlop = Convert.ToInt32(row["MaLop"]);
         }
 
         public SinhVien()

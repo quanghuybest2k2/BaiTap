@@ -34,7 +34,7 @@ namespace EntityFrameworkDBFirst
             this.colMSSV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHoTenSV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colLop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textTimKiem = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.txtHoTenSV = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.cbbLop = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,7 @@ namespace EntityFrameworkDBFirst
             // gbDanhSachSV
             // 
             this.gbDanhSachSV.Controls.Add(this.lvDanhSachSV);
-            this.gbDanhSachSV.Controls.Add(this.textTimKiem);
+            this.gbDanhSachSV.Controls.Add(this.txtTimKiem);
             this.gbDanhSachSV.Location = new System.Drawing.Point(12, 145);
             this.gbDanhSachSV.Name = "gbDanhSachSV";
             this.gbDanhSachSV.Size = new System.Drawing.Size(572, 290);
@@ -74,6 +74,7 @@ namespace EntityFrameworkDBFirst
             this.lvDanhSachSV.TabIndex = 1;
             this.lvDanhSachSV.UseCompatibleStateImageBehavior = false;
             this.lvDanhSachSV.View = System.Windows.Forms.View.Details;
+            this.lvDanhSachSV.SelectedIndexChanged += new System.EventHandler(this.lvDanhSachSV_SelectedIndexChanged);
             // 
             // colMSSV
             // 
@@ -89,12 +90,13 @@ namespace EntityFrameworkDBFirst
             this.colLop.Text = "Lớp";
             this.colLop.Width = 111;
             // 
-            // textTimKiem
+            // txtTimKiem
             // 
-            this.textTimKiem.Location = new System.Drawing.Point(385, 19);
-            this.textTimKiem.Name = "textTimKiem";
-            this.textTimKiem.Size = new System.Drawing.Size(181, 20);
-            this.textTimKiem.TabIndex = 0;
+            this.txtTimKiem.Location = new System.Drawing.Point(385, 19);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(181, 20);
+            this.txtTimKiem.TabIndex = 0;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // txtHoTenSV
             // 
@@ -154,6 +156,7 @@ namespace EntityFrameworkDBFirst
             this.btnReload.TabIndex = 13;
             this.btnReload.Text = "Tải lại";
             this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnSave
             // 
@@ -163,6 +166,7 @@ namespace EntityFrameworkDBFirst
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReset
             // 
@@ -172,6 +176,7 @@ namespace EntityFrameworkDBFirst
             this.btnReset.TabIndex = 15;
             this.btnReset.Text = "Mặc định";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmDBFirst
             // 
@@ -191,6 +196,7 @@ namespace EntityFrameworkDBFirst
             this.Name = "frmDBFirst";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý sinh viên EFDBFirst";
+            this.Load += new System.EventHandler(this.frmDBFirst_Load);
             this.gbDanhSachSV.ResumeLayout(false);
             this.gbDanhSachSV.PerformLayout();
             this.ResumeLayout(false);
@@ -205,7 +211,7 @@ namespace EntityFrameworkDBFirst
         private System.Windows.Forms.ColumnHeader colMSSV;
         private System.Windows.Forms.ColumnHeader colHoTenSV;
         private System.Windows.Forms.ColumnHeader colLop;
-        private System.Windows.Forms.TextBox textTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.TextBox txtHoTenSV;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.ComboBox cbbLop;
