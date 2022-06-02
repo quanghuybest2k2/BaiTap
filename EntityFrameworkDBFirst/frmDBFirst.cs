@@ -13,7 +13,7 @@ namespace EntityFrameworkDBFirst
 {
     public partial class frmDBFirst : Form
     {
-        private const string textSearch = "Nhập tên sinh viên";
+        private string textSearch = "Nhập tên sinh viên";
         private QLSinhVienContext context;
         public frmDBFirst()
         {
@@ -61,8 +61,9 @@ namespace EntityFrameworkDBFirst
         }
         private void GetAllLop()
         {
-            var list = context.Lops.ToList();
-            cbbLop.DisplayMember = "TenLop";
+            var list = context.Lops.Include(sv => sv.TenLop).ToList();
+            
+            cbbLop.DisplayMember = "Name";
             cbbLop.ValueMember = "Id";
             cbbLop.DataSource = list;
         }

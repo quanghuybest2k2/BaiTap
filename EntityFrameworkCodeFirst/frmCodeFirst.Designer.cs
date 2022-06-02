@@ -74,6 +74,7 @@ namespace EntityFrameworkCodeFirst
             this.lvDanhSachSV.TabIndex = 1;
             this.lvDanhSachSV.UseCompatibleStateImageBehavior = false;
             this.lvDanhSachSV.View = System.Windows.Forms.View.Details;
+            this.lvDanhSachSV.SelectedIndexChanged += new System.EventHandler(this.lvDanhSachSV_SelectedIndexChanged);
             // 
             // colMSSV
             // 
@@ -95,6 +96,7 @@ namespace EntityFrameworkCodeFirst
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(181, 20);
             this.txtTimKiem.TabIndex = 0;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // txtHoTenSV
             // 
@@ -154,6 +156,7 @@ namespace EntityFrameworkCodeFirst
             this.btnReload.TabIndex = 13;
             this.btnReload.Text = "Tải lại";
             this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnSave
             // 
@@ -163,6 +166,7 @@ namespace EntityFrameworkCodeFirst
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReset
             // 
@@ -172,6 +176,7 @@ namespace EntityFrameworkCodeFirst
             this.btnReset.TabIndex = 15;
             this.btnReset.Text = "Mặc định";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmCodeFirst
             // 

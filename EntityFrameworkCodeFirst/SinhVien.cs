@@ -12,5 +12,9 @@ namespace EntityFrameworkCodeFirst
         public string HoTen { get; set; }
         public int LopId { get; set; }
         public virtual Lop lop { get; set; }
+        public SinhVien()
+        {
+
+        }
     }
 }

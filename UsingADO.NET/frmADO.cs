@@ -20,7 +20,7 @@ namespace UsingADO.NET
             InitializeComponent();
         }
         private string ChuoiKetNoi;
-        private const string textSearch = "Nhập tên sinh viên";
+        private string textSearch = "Nhập tên sinh viên";
         private List<Lop> DanhSachLop;
         private List<SinhVien> DanhSachSV;
 
@@ -143,7 +143,7 @@ namespace UsingADO.NET
                 command.CommandText = "exec InsertStudent @Hoten, @Malop";
             else
             {
-                command.CommandText = "update SinhVien set Hoten =@Hoten, Malop=@Malop where id = @Id";
+                command.CommandText = "update SinhVien set Hoten = @Hoten, Malop=@Malop where id = @Id";
             }
             command.Parameters.AddWithValue("@Hoten", sv.Hoten);
             command.Parameters.AddWithValue("@Malop", sv.IDlop);
