@@ -1,7 +1,7 @@
 ﻿
 namespace EntityFrameworkCodeFirst
 {
-    partial class frmCodeFirst
+    partial class frmEFCodeFirst
     {
         /// <summary>
         /// Required designer variable.
@@ -179,7 +179,7 @@ namespace EntityFrameworkCodeFirst
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // frmCodeFirst
+            // frmEFCodeFirst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,7 +194,7 @@ namespace EntityFrameworkCodeFirst
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnReset);
-            this.Name = "frmCodeFirst";
+            this.Name = "frmEFCodeFirst";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý sinh viên EFCodeFirst";
             this.Load += new System.EventHandler(this.frmCodeFirst_Load);

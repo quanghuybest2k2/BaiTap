@@ -16,7 +16,7 @@ namespace EntityFrameworkCodeFirst
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCodeFirst());
+            Application.Run(new frmEFCodeFirst());
         }
     }
 }

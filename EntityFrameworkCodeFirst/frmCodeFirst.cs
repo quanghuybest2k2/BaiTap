@@ -11,11 +11,11 @@ using System.Data.Entity;
 
 namespace EntityFrameworkCodeFirst
 {
-    public partial class frmCodeFirst : Form
+    public partial class frmEFCodeFirst : Form
     {
         private QLSVContext context;
         private string textSearch = "Nhập tên sinh viên";
-        public frmCodeFirst()
+        public frmEFCodeFirst()
         {
             InitializeComponent();
         }

@@ -21,7 +21,7 @@ namespace UsingADO.NET
         public SinhVien(DataRow row)
         {
             IDSinhVien = Convert.ToInt32(row["ID"]);
-            Hoten = row["Hoten"].ToString();
+            Hoten = row["HoTen"].ToString();
             IDlop = Convert.ToInt32(row["MaLop"]);
         }
 

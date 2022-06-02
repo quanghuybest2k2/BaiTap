@@ -72,17 +72,6 @@ namespace UsingADO.NET
             txtHoTenSV.Text = "";
             txtId.Text = "";
         }
-        private SinhVien GetSinhVien()
-        {
-            var sv = new SinhVien();
-            if (!string.IsNullOrWhiteSpace(txtHoTenSV.Text))
-            {
-                sv.Hoten = txtHoTenSV.Text;
-                sv.IDSinhVien = string.IsNullOrWhiteSpace(txtId.Text) ? -1 : int.Parse(txtId.Text);
-                sv.IDlop = Convert.ToInt32(cbbLop.SelectedValue);
-            }
-            return sv;
-        }
         private void GetAllLop()
         {
             var sqlConnection = new SqlConnection(ChuoiKetNoi);
@@ -106,7 +95,8 @@ namespace UsingADO.NET
         {
             var sqlConnection = new SqlConnection(ChuoiKetNoi);
             var command = sqlConnection.CreateCommand();
-            command.CommandText = "select * from SinhVien";
+            command.CommandText = "Select sv.hoten, sv.id, l.tenlop from SinhVien sv, Lop l Where l.id = sv.malop";
+            //command.CommandText = "Select * from sinhvien";
             var adapter = new SqlDataAdapter(command);
             var tb = new DataTable("SinhVien");
             sqlConnection.Open();
@@ -117,18 +107,23 @@ namespace UsingADO.NET
                 DanhSachSV.Add(new SinhVien(row));
             }
         }
-        private void ThietLapThongTin(SinhVien sv)
-        {
-            txtHoTenSV.Text = sv.Hoten;
-            txtId.Text = sv.IDSinhVien.ToString();
-            cbbLop.SelectedValue = sv.IDlop;
-        }
+
         private void btnReload_Click(object sender, EventArgs e)
         {
             GetAllSinhVien();
             LoadListView(DanhSachSV);
         }
-
+        private SinhVien GetSinhVien()
+        {
+            var sv = new SinhVien();
+            if (!string.IsNullOrWhiteSpace(txtHoTenSV.Text))
+            {
+                sv.Hoten = txtHoTenSV.Text;
+                sv.IDSinhVien = string.IsNullOrWhiteSpace(txtId.Text) ? -1 : int.Parse(txtId.Text);
+                sv.IDlop = Convert.ToInt32(cbbLop.SelectedValue);
+            }
+            return sv;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             var sv = GetSinhVien();
@@ -143,7 +138,7 @@ namespace UsingADO.NET
                 command.CommandText = "exec InsertStudent @Hoten, @Malop";
             else
             {
-                command.CommandText = "update SinhVien set Hoten = @Hoten, Malop=@Malop where id = @Id";
+                command.CommandText = "update SinhVien set Hoten = @Hoten, Malop= @Malop where id = @Id";
             }
             command.Parameters.AddWithValue("@Hoten", sv.Hoten);
             command.Parameters.AddWithValue("@Malop", sv.IDlop);
@@ -163,10 +158,15 @@ namespace UsingADO.NET
             var list = DanhSachSV.Where(sv => sv.Hoten.IndexOf(txtTimKiem.Text, StringComparison.InvariantCultureIgnoreCase) == 0).ToList();
             LoadListView(list);
         }
-
+        private void ThietLapThongTin(SinhVien sv)
+        {
+            txtHoTenSV.Text = sv.Hoten;
+            txtId.Text = sv.IDSinhVien.ToString();
+            cbbLop.SelectedValue = sv.IDlop.ToString();
+        }
         private void lvDanhSachSV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvDanhSachSV.SelectedItems.Count>0)
+            if (lvDanhSachSV.SelectedItems.Count > 0)
             {
                 var id = int.Parse(lvDanhSachSV.SelectedItems[0].Text);
                 var sinhvien = DanhSachSV.FirstOrDefault(sv => sv.IDSinhVien == id);
