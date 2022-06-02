@@ -66,9 +66,9 @@ namespace EntityFrameworkCodeFirst
         private void GetAllLop()
         {
             var list = context.lops.ToList();
-            cbbLop.DisplayMember = "TenLop";
-            cbbLop.ValueMember = "Id";
             cbbLop.DataSource = list;
+            cbbLop.ValueMember = "Id";
+            cbbLop.DisplayMember = "Name";
         }
         private SinhVien GetSinhVien()
         {
@@ -129,6 +129,11 @@ namespace EntityFrameworkCodeFirst
         {
             txtHoTenSV.Text = "";
             txtId.Text = "";
+        }
+
+        private void cbbLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

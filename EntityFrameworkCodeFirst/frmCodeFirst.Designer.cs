@@ -120,6 +120,7 @@ namespace EntityFrameworkCodeFirst
             this.cbbLop.Name = "cbbLop";
             this.cbbLop.Size = new System.Drawing.Size(258, 21);
             this.cbbLop.TabIndex = 9;
+            this.cbbLop.SelectedIndexChanged += new System.EventHandler(this.cbbLop_SelectedIndexChanged);
             // 
             // lblHoTenSV
             // 

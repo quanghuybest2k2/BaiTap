@@ -61,11 +61,10 @@ namespace EntityFrameworkDBFirst
         }
         private void GetAllLop()
         {
-            var list = context.Lops.Include(sv => sv.TenLop).ToList();
-            
-            cbbLop.DisplayMember = "Name";
-            cbbLop.ValueMember = "Id";
+            var list = context.Lops.ToList();
             cbbLop.DataSource = list;
+            cbbLop.DisplayMember = "TenLop";
+            cbbLop.ValueMember = "Id";
         }
         private SinhVien GetSinhVien()
         {
