@@ -66,6 +66,27 @@ namespace EntityFrameworkDBFirst
             cbbLop.DisplayMember = "TenLop";
             cbbLop.ValueMember = "Id";
         }
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            var list = context.SinhViens.Include(sv => sv.Lop).ToList();
+            LoadListView(list);
+        }
+        private void ThietLapThongTin(SinhVien sv)
+        {
+            txtHoTenSV.Text = sv.HoTen;
+            txtId.Text = sv.ID.ToString();
+            cbbLop.SelectedValue = sv.MaLop;
+        }
+       
+        private void lvDanhSachSV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvDanhSachSV.SelectedItems.Count > 0)
+            {
+                var id = int.Parse(lvDanhSachSV.SelectedItems[0].Text);
+                var sinhvien = context.SinhViens.Find(id);
+                ThietLapThongTin(sinhvien);
+            }
+        }
         private SinhVien GetSinhVien()
         {
             var sv = new SinhVien();
@@ -77,28 +98,6 @@ namespace EntityFrameworkDBFirst
             }
             return sv;
         }
-        private void ThietLapThongTin(SinhVien sv)
-        {
-            txtHoTenSV.Text = sv.HoTen;
-            txtId.Text = sv.ID.ToString();
-            cbbLop.SelectedValue = sv.MaLop;
-        }
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            var list = context.SinhViens.Include(sv => sv.Lop).ToList();
-            LoadListView(list);
-        }
-
-        private void lvDanhSachSV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvDanhSachSV.SelectedItems.Count > 0)
-            {
-                var id = int.Parse(lvDanhSachSV.SelectedItems[0].Text);
-                var sinhvien = context.SinhViens.Find(id);
-                ThietLapThongTin(sinhvien);
-            }
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             var sv = GetSinhVien();

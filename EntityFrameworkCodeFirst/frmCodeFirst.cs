@@ -130,10 +130,5 @@ namespace EntityFrameworkCodeFirst
             txtHoTenSV.Text = "";
             txtId.Text = "";
         }
-
-        private void cbbLop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
